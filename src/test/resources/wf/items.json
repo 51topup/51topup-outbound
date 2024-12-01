@@ -1,0 +1,169 @@
+{
+  "code": 1,
+  "msg": "查询成功",
+  "data": [
+    {
+      "goodsid": 413353,
+      "imgurl": "http:\/\/umg.yxp8.cn\/fa85a4982b7cab652ac7cc3a551b30dd.png",
+      "goodsname": "【自动充值】蜻蜓FM会员『1天』",
+      "goodsprice": "0.3810",
+      "goodsstatus": 1,
+      "goodstype": 1,
+      "stock": 9999,
+      "buyminnum": 1,
+      "goodsgroupid": 31610,
+      "attach": [
+        {
+          "title": "手机号码",
+          "tip": "虚拟商品购买后无法退款"
+        }
+      ]
+    },
+    {
+      "goodsid": 971245,
+      "imgurl": "http:\/\/umg.yxp8.cn\/c6310c1912824221026bedd695f77525.png",
+      "goodsname": "【直充】凯叔讲故事年卡 填写充值手机号 1-10分钟到账",
+      "goodsprice": "243.7600",
+      "goodsstatus": 1,
+      "goodstype": 1,
+      "stock": 999999,
+      "buyminnum": 1,
+      "goodsgroupid": 10275,
+      "attach": [
+        {
+          "title": "手机号码",
+          "tip": "虚拟商品购买后无法退款"
+        }
+      ]
+    },
+    {
+      "goodsid": 1275775,
+      "imgurl": "http:\/\/umg.yxp8.cn\/852eb471de18c4ed09bfe99a0f7509fb.png",
+      "goodsname": "【账号直充】怪兽充电代金券3元官方直充丨立即到账丨24小时全天秒单",
+      "goodsprice": "2.5500",
+      "goodsstatus": 1,
+      "goodstype": 1,
+      "stock": 9999,
+      "buyminnum": 1,
+      "goodsgroupid": 10387,
+      "attach": [
+        {
+          "title": "手机号码",
+          "tip": "虚拟商品购买后无法退款"
+        }
+      ]
+    },
+    {
+      "goodsid": 1275776,
+      "imgurl": "http:\/\/umg.yxp8.cn\/852eb471de18c4ed09bfe99a0f7509fb.png",
+      "goodsname": "【账号直充】怪兽充电代金券2元官方直充丨立即到账丨24小时全天秒单",
+      "goodsprice": "1.2500",
+      "goodsstatus": 1,
+      "goodstype": 1,
+      "stock": 49930,
+      "buyminnum": 1,
+      "goodsgroupid": 10387,
+      "attach": [
+        {
+          "title": "手机号码",
+          "tip": "虚拟商品购买后无法退款"
+        }
+      ]
+    },
+    {
+      "goodsid": 1275777,
+      "imgurl": "http:\/\/umg.yxp8.cn\/852eb471de18c4ed09bfe99a0f7509fb.png",
+      "goodsname": "【账号直充】怪兽充电代金券1元官方直充丨立即到账丨24小时全天秒单",
+      "goodsprice": "0.8500",
+      "goodsstatus": 1,
+      "goodstype": 1,
+      "stock": 9999,
+      "buyminnum": 1,
+      "goodsgroupid": 10387,
+      "attach": [
+        {
+          "title": "手机号码",
+          "tip": "虚拟商品购买后无法退款"
+        }
+      ]
+    },
+    {
+      "goodsid": 1361839,
+      "imgurl": "http:\/\/umg.yxp8.cn\/e68630f7ddad843beebf9301298e85c6.png",
+      "goodsname": "咪咕视频会员天卡   限价1",
+      "goodsprice": "1.9500",
+      "goodsstatus": 1,
+      "goodstype": 1,
+      "stock": 982704,
+      "buyminnum": 1,
+      "goodsgroupid": 100034,
+      "attach": [
+        {
+          "title": "手机号码",
+          "tip": "虚拟商品购买后无法退款"
+        }
+      ]
+    },
+    {
+      "goodsid": 1372179,
+      "imgurl": "http:\/\/umg.yxp8.cn\/e6d95bb1c32ae1d2f64f52fe6d44da24.jpg",
+      "goodsname": "【自动充值】腾讯先锋云游戏会员1个月",
+      "goodsprice": "19.7100",
+      "goodsstatus": 1,
+      "goodstype": 1,
+      "stock": 7957,
+      "buyminnum": 1,
+      "goodsgroupid": 101062,
+      "attach": [
+        {
+          "title": "仅支持QQ",
+          "tip": "仅支持QQ"
+        }
+      ]
+    },
+    {
+      "goodsid": 1455625,
+      "imgurl": "http:\/\/umg.yxp8.cn\/478859d0f4a92414daad7a41e6bcbc54.jpg",
+      "goodsname": "【兑换码】稿定设计个人3天-限价7.9",
+      "goodsprice": "3.3000",
+      "goodsstatus": 1,
+      "goodstype": 0,
+      "stock": 1834,
+      "buyminnum": 1,
+      "goodsgroupid": 107070,
+      "attach": []
+    },
+    {
+      "goodsid": 1685768,
+      "imgurl": "http:\/\/umg.yxp8.cn\/85849a3e1b304db3416069cdb104d1f0.png",
+      "goodsname": "KS币1元10快手币【1元起充】",
+      "goodsprice": "1.0150",
+      "goodsstatus": 1,
+      "goodstype": 1,
+      "stock": 999999996,
+      "buyminnum": 1,
+      "goodsgroupid": 115614,
+      "attach": []
+    },
+    {
+      "goodsid": 1685777,
+      "imgurl": "http:\/\/umg.yxp8.cn\/08c816fa13e5611a9fb70fb7ede8206b.png",
+      "goodsname": "晋江币\/晋江文学币按元充值【1起倍充】",
+      "goodsprice": "0.9810",
+      "goodsstatus": 1,
+      "goodstype": 1,
+      "stock": 2146423733,
+      "buyminnum": 1,
+      "goodsgroupid": 115616,
+      "attach": [
+        {
+          "title": "充值账号",
+          "tip": ""
+        }
+      ]
+    }
+  ],
+  "nowpage": "1",
+  "allpage": 45,
+  "count": 448
+}

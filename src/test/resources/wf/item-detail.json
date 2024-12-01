@@ -1,0 +1,34 @@
+{
+  "code": 1,
+  "msg": "查询成功",
+  "goodsdetails": {
+    "id": 413353,
+    "groupname": "蜻蜓FM",
+    "groupimgurl": "http:\/\/umg.yxp8.cn\/fa85a4982b7cab652ac7cc3a551b30dd.png",
+    "brandname": "音频会员",
+    "brandimgurl": "",
+    "brandid": 16217,
+    "attachgroupid": 10534,
+    "goodsname": "【自动充值】蜻蜓FM会员『1天』",
+    "goodsgroupid": 31610,
+    "stock": 9999,
+    "salesvolume": 82922,
+    "goodsprice": 0.381,
+    "marketprice": 0,
+    "goodsstatus": 1,
+    "buyminnum": 1,
+    "buymaxnum": 50000,
+    "tiptext": "",
+    "imgurl": "http:\/\/umg.yxp8.cn\/fa85a4982b7cab652ac7cc3a551b30dd.png",
+    "goodstype": 1,
+    "goodstypetext": "自动充值",
+    "msgboxtip": "",
+    "details": "<p style=\"color: rgb(51, 51, 51); font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 14px; white-space: normal;\"><span style=\"color: rgb(255, 0, 0);\"><strong><span style=\"font-size: 20px;\">请填写蜻蜓FM的手机号 前后不要有空格 冲错账号 由于官方自动充值 成功故不退款！<br\/><\/span><\/strong><\/span><\/p><p style=\"color: rgb(51, 51, 51); font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 14px; white-space: normal;\"><span style=\"color: rgb(255, 0, 0);\"><strong><span style=\"font-size: 20px;\">到账时间1-60秒 1个账号每月1次！不可叠加！<\/span><\/strong><\/span><\/p><p style=\"color: rgb(51, 51, 51); font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 14px; white-space: normal;\"><img src=\"http:\/\/faka.tianhe189.cn\/ueditor\/php\/upload\/image\/20190927\/1569582523.png\" title=\"1569582523.png\" alt=\"1566374739.png\"\/><\/p><p><br\/><\/p>",
+    "attach": [
+      {
+        "title": "手机号码",
+        "tip": "虚拟商品购买后无法退款"
+      }
+    ]
+  }
+}
