@@ -2,7 +2,7 @@ package shop.topup.outbound.domain.common.dao
 
 import com.github.database.rider.core.api.dataset.DataSet
 import org.springframework.beans.factory.annotation.Autowired
-import shop.topup.workspace.TestcontainersBaseTest
+import shop.topup.outbound.TestcontainersBaseTest
 import kotlin.test.Test
 
 @DataSet("/db/dataset/suppliers.xml")

@@ -7,7 +7,7 @@ import shop.topup.admin.domain.common.jooq.tables.SupplierCatalog
 import shop.topup.admin.domain.common.jooq.tables.SupplierGoods
 import shop.topup.outbound.domain.common.dao.SupplierCatalogDAO
 import shop.topup.outbound.domain.common.dao.SupplierGoodsDAO
-import shop.topup.workspace.TestcontainersBaseTest
+import shop.topup.outbound.TestcontainersBaseTest
 
 @DataSet("/db/dataset/suppliers.xml")
 class WeFutureSyncServiceTest : TestcontainersBaseTest() {

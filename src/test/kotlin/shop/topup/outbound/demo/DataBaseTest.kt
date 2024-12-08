@@ -6,7 +6,7 @@ import org.dbunit.database.IDatabaseConnection
 import org.dbunit.dataset.xml.FlatDtdDataSet
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import shop.topup.workspace.TestcontainersBaseTest
+import shop.topup.outbound.TestcontainersBaseTest
 import java.io.FileOutputStream
 import javax.sql.DataSource
 import kotlin.jvm.Throws
