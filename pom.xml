@@ -15,7 +15,7 @@
     <description>调用外部第三方充值模块接口，实现充值功能</description>
     <properties>
         <java.version>21</java.version>
-        <kotlin.version>2.1.0-RC2</kotlin.version>
+        <kotlin.version>2.1.0</kotlin.version>
         <jooq.version>3.19.15</jooq.version>
         <jooq-spring.version>0.4.0</jooq-spring.version>
         <jooq-utilities.version>1.1.2</jooq-utilities.version>
@@ -194,9 +194,8 @@
                                 <generator>
                                     <database>
                                         <inputSchema>public</inputSchema>
-                                        <includes>
-                                            account
-                                        </includes>
+                                        <!-- <includes>account</includes>-->
+                                        <excludes>flyway_schema_history</excludes>
                                     </database>
                                     <!--<name>org.jooq.codegen.KotlinGenerator</name>-->
                                     <name>ch.martinelli.oss.jooq.EqualsAndHashCodeJavaGenerator</name>
