@@ -18,9 +18,9 @@ class WeFutureService(val objectMapper: ObjectMapper) : ServiceProvider {
     val restClient = RestClient.builder()
         .baseUrl("http://aa.wefutureidea.com").build();
 
-    override fun fetchBalance(id: String, secret: String): Double {
+    override fun fetchBalance(userId: String, secret: String): Double {
         val map = LinkedMultiValueMap<String, String>();
-        map.add("userid", id)
+        map.add("userid", userId)
         fillSignature(map, secret)
         val jsonText = restClient.post().uri("/dockapi/index/userinfo")
             .contentType(APPLICATION_FORM_URLENCODED)
@@ -31,9 +31,9 @@ class WeFutureService(val objectMapper: ObjectMapper) : ServiceProvider {
         return result.data.money
     }
 
-    fun fetchGroups(id: String, secret: String): List<WfGroup> {
+    fun fetchGroups(userId: String, secret: String): List<WfGroup> {
         val map = LinkedMultiValueMap<String, String>();
-        map.add("userid", id)
+        map.add("userid", userId)
         fillSignature(map, secret)
         val jsonText = restClient.post().uri("/dockapi/v2/getallgoodsgroup")
             .contentType(APPLICATION_FORM_URLENCODED)
@@ -47,9 +47,9 @@ class WeFutureService(val objectMapper: ObjectMapper) : ServiceProvider {
     /**
      * page start with 0
      */
-    fun fetchItems(id: String, secret: String, page: Int): WfItemsResult {
+    fun fetchItems(userId: String, secret: String, page: Int): WfItemsResult {
         val map = LinkedMultiValueMap<String, String>()
-        map.add("userid", id)
+        map.add("userid", userId)
         map.add("page", page.toString())
         map.add("limit","20")
         fillSignature(map, secret)
@@ -61,9 +61,9 @@ class WeFutureService(val objectMapper: ObjectMapper) : ServiceProvider {
         return objectMapper.readValue<WfItemsResult>(jsonText)
     }
 
-    fun fetchItemDetail(id: String, secret: String, goodsId: Int): WfItemDetail {
+    fun fetchItemDetail(userId: String, secret: String, goodsId: Int): WfItemDetail {
         val map = LinkedMultiValueMap<String, String>()
-        map.add("userid", id)
+        map.add("userid", userId)
         map.add("goodsid", goodsId.toString())
         fillSignature(map, secret)
         val objectNode = restClient.post().uri("/dockapi/v2/goodsdetails.html")
@@ -89,9 +89,9 @@ class WeFutureService(val objectMapper: ObjectMapper) : ServiceProvider {
             .body(PlaceOrderResult::class.java)!!
     }
 
-    fun fetchOrderDetail(id: String, secret: String, orderNo: String): OrderDetailResult {
+    fun fetchOrderDetail(userId: String, secret: String, orderNo: String): OrderDetailResult {
         val map = LinkedMultiValueMap<String, String>()
-        map.add("userid", id)
+        map.add("userid", userId)
         map.add("orderno", orderNo)
         fillSignature(map, secret)
         return restClient.post().uri("/dockapi/index/orderinfo")
@@ -117,7 +117,7 @@ class WeFutureService(val objectMapper: ObjectMapper) : ServiceProvider {
 data class Result<T>(val code: Int, val msg: String, val data: T)
 data class WfSellerInfo(val money: Double, val creditquota: Double, val group_id: Int)
 data class WfGroup(
-    val groupid: Int,
+    val groupid: Long,
     val groupname: String,
     val groupaliasname: String?,
     val groupimgurl: String,
@@ -135,7 +135,7 @@ data class WfItemsResult(
 )
 
 data class WfItem(
-    val goodsid: Int,
+    val goodsid: Long,
     val imgurl: String,
     val goodsname: String,
     val goodsprice: Double,
@@ -143,14 +143,14 @@ data class WfItem(
     val goodstype: Int,
     val stock: Int,
     val buyminnum: Int,
-    val goodsgroupid: Int,
+    val goodsgroupid: Long,
     val attach: List<Note>?
 )
 
 data class Note(val title: String, val tip: String?)
 
 data class WfItemDetail(
-    val id: Int,
+    val id: Long,
     val groupname: String,
     val groupimgurl: String,
     val brandname: String,
@@ -158,7 +158,7 @@ data class WfItemDetail(
     val brandid: Int,
     val attachgroupid: Int, //充值字段模版ID
     val goodsname: String,
-    val goodsgroupid: Int,
+    val goodsgroupid: Long,
     val stock: Int,
     val salesvolume: Int,
     val goodsprice: Double,
@@ -177,7 +177,7 @@ data class WfItemDetail(
 
 data class PlaceOrderRequest(
     val userid: String,
-    val goodsid: Int,
+    val goodsid: Long,
     val buynum: Int,
     val outorderno: String,
     val attach: String,
@@ -209,7 +209,7 @@ data class OrderDetail(
     val money: Double,
     val buynum: Int,
     val goodsprice: Double,
-    val goodsid: Int,
+    val goodsid: Long,
     val status: Int, //订单状态 0=已付款 1=已提取 2=未付款 3=进行中 4=撤回 5=充值成功
     val refundmoney: Double,
     val refundstatus: Int, //0=未退款 1=已退款
