@@ -21,3 +21,9 @@
 
 - URL: http://aa.wefutureidea.com/
 - 商户ID:35132
+                      
+每隔6个小时同步一次类目和商品类目数据，也可以进行实时调用
+
+# References
+
+* Scheduling Tasks: https://spring.io/guides/gs/scheduling-tasks
