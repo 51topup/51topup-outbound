@@ -1,6 +1,7 @@
 package shop.topup.outbound.domain.service
 
 import org.slf4j.Logger
+import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Service
 import shop.topup.admin.domain.common.jooq.tables.SupplierCatalog
 import shop.topup.admin.domain.common.jooq.tables.SupplierGoods
@@ -20,6 +21,7 @@ class WeFutureSyncService(
     val log: Logger = org.slf4j.LoggerFactory.getLogger(WeFutureSyncService::class.java)
     val supplierId: Long = 1
 
+    @Scheduled(fixedRate = 60 * 60 * 6) // 6 hours
     fun syncGroups() {
         val supplierApiInfo = supplierDAO.findApiInfo(supplierId)!!
         val catalogs = weFutureService.fetchGroups(supplierApiInfo.apiKey, supplierApiInfo.apiSecret)
@@ -39,10 +41,12 @@ class WeFutureSyncService(
         }
     }
 
+    @Scheduled(fixedRate = 60 * 60 * 6) // 6 hours
     fun syncGoods() {
         val supplierApiInfo = supplierDAO.findApiInfo(supplierId)!!
         val catalogs: Map<Long, SupplierCatalogRecord> =
-            supplierCatalogDAO.findAll(SupplierCatalog.SUPPLIER_CATALOG.SUPPLIER_ID.eq(supplierId)).associateBy { it.groupId }
+            supplierCatalogDAO.findAll(SupplierCatalog.SUPPLIER_CATALOG.SUPPLIER_ID.eq(supplierId))
+                .associateBy { it.groupId }
         (0..33).forEach { i ->
             log.info("Sync goods: { page: $i }")
             val result = weFutureService.fetchItems(supplierApiInfo.apiKey, supplierApiInfo.apiSecret, i)
