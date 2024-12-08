@@ -1,4 +1,4 @@
-package shop.topup.outbound.service
+package shop.topup.outbound.domain.service
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.node.ObjectNode
@@ -40,7 +40,6 @@ class WeFutureService(val objectMapper: ObjectMapper) : ServiceProvider {
             .body(map)
             .retrieve()
             .body(String::class.java)!!
-        println(jsonText)
         val result = objectMapper.readValue<Result<List<WfGroup>>>(jsonText);
         return result.data
     }
@@ -52,13 +51,13 @@ class WeFutureService(val objectMapper: ObjectMapper) : ServiceProvider {
         val map = LinkedMultiValueMap<String, String>()
         map.add("userid", id)
         map.add("page", page.toString())
+        map.add("limit","20")
         fillSignature(map, secret)
         val jsonText = restClient.post().uri("/dockapi/v2/getallgoods")
             .contentType(APPLICATION_FORM_URLENCODED)
             .body(map)
             .retrieve()
             .body(String::class.java)!!
-        println(jsonText)
         return objectMapper.readValue<WfItemsResult>(jsonText)
     }
 
