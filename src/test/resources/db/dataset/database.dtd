@@ -1,0 +1,77 @@
+<!ELEMENT dataset (
+    flyway_schema_history*,
+    supplier*,
+    supplier_api_info*,
+    supplier_catalog*,
+    supplier_goods*)>
+
+<!ELEMENT flyway_schema_history EMPTY>
+<!ATTLIST flyway_schema_history
+    installed_rank CDATA #REQUIRED
+    version CDATA #IMPLIED
+    description CDATA #REQUIRED
+    type CDATA #REQUIRED
+    script CDATA #REQUIRED
+    checksum CDATA #IMPLIED
+    installed_by CDATA #REQUIRED
+    installed_on CDATA #IMPLIED
+    execution_time CDATA #REQUIRED
+    success CDATA #REQUIRED
+>
+
+<!ELEMENT supplier EMPTY>
+<!ATTLIST supplier
+    id CDATA #IMPLIED
+    avatar CDATA #IMPLIED
+    name CDATA #REQUIRED
+    description CDATA #IMPLIED
+    url CDATA #IMPLIED
+    submitted_by CDATA #REQUIRED
+    status CDATA #REQUIRED
+    created_at CDATA #IMPLIED
+    updated_at CDATA #IMPLIED
+>
+
+<!ELEMENT supplier_api_info EMPTY>
+<!ATTLIST supplier_api_info
+    id CDATA #IMPLIED
+    api_url CDATA #IMPLIED
+    api_key CDATA #IMPLIED
+    api_secret CDATA #IMPLIED
+    api_token CDATA #IMPLIED
+    status CDATA #REQUIRED
+    updated_at CDATA #IMPLIED
+>
+
+<!ELEMENT supplier_catalog EMPTY>
+<!ATTLIST supplier_catalog
+    id CDATA #IMPLIED
+    supplier_id CDATA #REQUIRED
+    group_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    img_url CDATA #IMPLIED
+    status CDATA #IMPLIED
+    created_at CDATA #IMPLIED
+    updated_at CDATA #IMPLIED
+>
+
+<!ELEMENT supplier_goods EMPTY>
+<!ATTLIST supplier_goods
+    id CDATA #IMPLIED
+    supplier_id CDATA #REQUIRED
+    catalog_id CDATA #REQUIRED
+    supplier_goods_id CDATA #REQUIRED
+    supplier_group_id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    main_pic CDATA #IMPLIED
+    description CDATA #IMPLIED
+    price CDATA #REQUIRED
+    market_price CDATA #IMPLIED
+    stock CDATA #REQUIRED
+    buy_min_num CDATA #REQUIRED
+    type CDATA #REQUIRED
+    status CDATA #REQUIRED
+    created_at CDATA #IMPLIED
+    updated_at CDATA #IMPLIED
+>
+
