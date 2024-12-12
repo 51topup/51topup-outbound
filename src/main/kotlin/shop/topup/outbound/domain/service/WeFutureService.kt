@@ -51,7 +51,7 @@ class WeFutureService(val objectMapper: ObjectMapper) : ServiceProvider {
         val map = LinkedMultiValueMap<String, String>()
         map.add("userid", userId)
         map.add("page", page.toString())
-        map.add("limit","20")
+        map.add("limit", "20")
         fillSignature(map, secret)
         val jsonText = restClient.post().uri("/dockapi/v2/getallgoods")
             .contentType(APPLICATION_FORM_URLENCODED)
@@ -75,18 +75,26 @@ class WeFutureService(val objectMapper: ObjectMapper) : ServiceProvider {
     }
 
     fun placeOrder(request: PlaceOrderRequest, secret: String): PlaceOrderResult {
-        val map = objectMapper.convertValue<LinkedMultiValueMap<String, String>>(request)
+        val map = LinkedMultiValueMap<String, String>()
         map.add("userid", request.userid)
         map.add("goodsid", request.goodsid.toString())
         map.add("buynum", request.buynum.toString())
         map.add("outorderno", request.outorderno)
         map.add("attach", request.attach)
+        if (request.attachjson != null) {
+            map.add("attachjson", request.attachjson)
+        }
+        if (request.callbackurl != null) {
+            map.add("callbackurl", request.callbackurl)
+        }
         fillSignature(map, secret)
-        return restClient.post().uri("/dockapi/index/buy")
+        val body = restClient.post().uri("/dockapi/index/buy")
             .contentType(APPLICATION_FORM_URLENCODED)
             .body(map)
             .retrieve()
-            .body(PlaceOrderResult::class.java)!!
+            .body(String::class.java)!!
+        println(body)
+        return objectMapper.readValue(body)
     }
 
     fun fetchOrderDetail(userId: String, secret: String, orderNo: String): OrderDetailResult {
@@ -94,7 +102,7 @@ class WeFutureService(val objectMapper: ObjectMapper) : ServiceProvider {
         map.add("userid", userId)
         map.add("orderno", orderNo)
         fillSignature(map, secret)
-        return restClient.post().uri("/dockapi/index/orderinfo")
+        return restClient.post().uri("/dockapi/index/queryorder")
             .contentType(APPLICATION_FORM_URLENCODED)
             .body(map)
             .retrieve()
@@ -181,7 +189,8 @@ data class PlaceOrderRequest(
     val buynum: Int,
     val outorderno: String,
     val attach: String,
-    val callbackurl: String?
+    val attachjson: String? = null,
+    val callbackurl: String? = null
 )
 
 data class PlaceOrderResult(
