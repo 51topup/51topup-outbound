@@ -21,7 +21,7 @@ class WeFutureSyncService(
     val log: Logger = org.slf4j.LoggerFactory.getLogger(WeFutureSyncService::class.java)
     val supplierId: Long = 1
 
-    @Scheduled(fixedRate = 60 * 60 * 6) // 6 hours
+    @Scheduled(fixedRate = 60 * 60 * 6, initialDelay = 60 * 60 * 6) // 6 hours
     fun syncGroups() {
         val supplierApiInfo = supplierDAO.findApiInfo(supplierId)!!
         val catalogs = weFutureService.fetchGroups(supplierApiInfo.apiKey, supplierApiInfo.apiSecret)
@@ -41,7 +41,7 @@ class WeFutureSyncService(
         }
     }
 
-    @Scheduled(fixedRate = 60 * 60 * 6) // 6 hours
+    @Scheduled(fixedRate = 60 * 60 * 6, initialDelay = 60 * 60 * 6) // 6 hours
     fun syncGoods() {
         val supplierApiInfo = supplierDAO.findApiInfo(supplierId)!!
         val catalogs: Map<Long, SupplierCatalogRecord> =
