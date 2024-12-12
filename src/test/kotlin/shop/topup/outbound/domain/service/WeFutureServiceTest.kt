@@ -1,6 +1,7 @@
 package shop.topup.outbound.domain.service
 
 import com.fasterxml.jackson.databind.DeserializationFeature
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonMapperBuilder
 import org.apache.commons.text.StringEscapeUtils
 import kotlin.test.Test
@@ -46,7 +47,26 @@ class WeFutureServiceTest {
 
     @Test
     fun fetchItemDetail() {
-        val item = weFutureService.fetchItemDetail(sellerId, secret, 413353)
-        println(item)
+        val item = weFutureService.fetchItemDetail(sellerId, secret, 1931722)
+        println(ObjectMapper().writeValueAsString(item))
+    }
+
+    @Test
+    fun fetchOrderDetail() {
+        val order = weFutureService.fetchOrderDetail(sellerId, secret, "D202411261902396962173519")
+        println(ObjectMapper().writeValueAsString(order))
+    }
+
+    @Test
+    fun testPlaceOrder() {
+        val request = PlaceOrderRequest(
+            userid = sellerId,
+            goodsid = 1931722,
+            buynum = 1,
+            outorderno = "123456789",
+            attach = "[{\"attachtype\":1,\"value\":\"18667135137\"}]",
+        )
+        val result = weFutureService.placeOrder(request, secret);
+        println(result)
     }
 }
