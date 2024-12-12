@@ -1,0 +1,7 @@
+### wefuture order callback
+POST http://localhost:8082/wf/order/callback
+Content-Type: application/x-www-form-urlencoded
+
+orderno=1234&outorderno=123456&userid=35132&status=5&refundstatus=0&money=8.25&refundmoney=0.0&receipt=%E5%85%85%E5%80%BC%E6%88%90%E5%8A%9F&refundreceipt=%E4%B8%8A%E6%B8%B8%E9%A3%8E%E6%8E%A7&create_time=1654854545&update_time=1654875498&timestamp=1685487545&sign=54584545511
+
+
